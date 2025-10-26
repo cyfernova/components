@@ -1,0 +1,394 @@
+{
+  "registry": {
+    "name": "my_custom_component",
+    "version": "1.0.0",
+    "description": "Flutter component library with animated UI components",
+    "homepage": "https://github.com/cyfernova/my_custom_component",
+    "generatedAt": "2025-10-26T21:26:23.640788",
+    "totalComponents": 20
+  },
+  "components": {
+    "animated_action_sheet": {
+      "path": "components/animated_action_sheet.dart",
+      "version": "1.0.0",
+      "checksum": "4c35c7a2fd92b854f610f89bd851ad9612485fef86b59f04be998e2210da92ac",
+      "fileSize": 15881,
+      "lastModified": "2025-10-25T22:49:55.000"
+    },
+    "animated_bottom_nav_bar": {
+      "path": "components/animated_bottom_nav_bar.dart",
+      "version": "1.0.0",
+      "checksum": "aa0694957883d124817515e4ffd28ce0f714bc822e2c5974c1d3a0349aeea016",
+      "fileSize": 6038,
+      "lastModified": "2025-10-23T00:34:03.000"
+    },
+    "animated_calendar": {
+      "path": "components/animated_calendar.dart",
+      "version": "1.0.0",
+      "checksum": "98cd0fd9b9f68c348d672f75492e40eff2a1538536642b124d7e0f7c782f279b",
+      "fileSize": 11311,
+      "lastModified": "2025-10-24T18:34:27.000"
+    },
+    "animated_card_component": {
+      "path": "components/animated_card_component.dart",
+      "version": "1.0.0",
+      "checksum": "33b60f9a1654e50626609af5902f64babca6af67aaf69cf0f7f2ad016400616c",
+      "fileSize": 4795,
+      "lastModified": "2025-10-23T00:11:47.000"
+    },
+    "animated_chat_box": {
+      "path": "components/animated_chat_box.dart",
+      "version": "1.0.0",
+      "checksum": "4b9715eb3598e7e03e0a8e9960bec48e804b7b64c731545713d64a9a16c3f33c",
+      "fileSize": 17985,
+      "lastModified": "2025-10-24T18:34:27.000"
+    },
+    "animated_download_bar": {
+      "path": "components/animated_download_bar.dart",
+      "version": "1.0.0",
+      "checksum": "7401615fb9cf2843d61f6c0ebe2a2d0e01d5b2b0ab6e4c08199f845c8af6869f",
+      "fileSize": 16821,
+      "lastModified": "2025-10-24T18:34:27.000"
+    },
+    "animated_music_bar": {
+      "path": "components/animated_music_bar.dart",
+      "version": "1.0.0",
+      "checksum": "2800fd392fecb2fc2b4500ca964fa46b5b67e629bda94089be02504a642ae84b",
+      "fileSize": 14210,
+      "lastModified": "2025-10-24T18:34:27.000"
+    },
+    "animated_notification_bar": {
+      "path": "components/animated_notification_bar.dart",
+      "version": "1.0.0",
+      "checksum": "dcf222dd4f2c1d45ca6a24a7f2e2f0b0b0eb1d94678e36c4c8ad3e0d39bf4af2",
+      "fileSize": 10019,
+      "lastModified": "2025-10-25T22:49:54.000"
+    },
+    "animated_search_bar": {
+      "path": "components/animated_search_bar.dart",
+      "version": "1.0.0",
+      "checksum": "c217eb344c90ec87dccf7c62bfad42fe04ee9fe8e08e0295c25c0f80805d183f",
+      "fileSize": 5860,
+      "lastModified": "2025-10-23T00:34:04.000"
+    },
+    "animated_side_drawer": {
+      "path": "components/animated_side_drawer.dart",
+      "version": "1.0.0",
+      "checksum": "6932afb811cd8f63f8d61150173ac0a6db92bf175a5a178c287c8993618e857e",
+      "fileSize": 9371,
+      "lastModified": "2025-10-23T00:34:03.000"
+    },
+    "animated_toggle_switch": {
+      "path": "components/animated_toggle_switch.dart",
+      "version": "1.0.0",
+      "checksum": "5ceb9ba8cbf9ab86568a5f931260b3f81d8b499c9e530f3b72b8890b413b2075",
+      "fileSize": 4484,
+      "lastModified": "2025-10-23T00:11:48.000"
+    },
+    "circular_progress_indicator": {
+      "path": "components/circular_progress_indicator.dart",
+      "version": "1.0.0",
+      "checksum": "6284be0bdd9d3531c42de529c12ed0f6e4f418cfcfc534b8d7227377546e217f",
+      "fileSize": 5289,
+      "lastModified": "2025-10-23T00:34:04.000"
+    },
+    "floating_action_menu": {
+      "path": "components/floating_action_menu.dart",
+      "version": "1.0.0",
+      "checksum": "404d207a73bcdf8d52a03071b0241a46492237aec9b4a362ab0cf5822fcfa58c",
+      "fileSize": 5177,
+      "lastModified": "2025-10-23T00:11:48.000"
+    },
+    "glassmorphic_button_component": {
+      "path": "components/glassmorphic_button_component.dart",
+      "version": "1.0.0",
+      "checksum": "fc0ff92b3b2d627247173f07b00812082b58370fba90d000f5b2303db87af99c",
+      "fileSize": 4126,
+      "lastModified": "2025-10-23T00:36:03.000"
+    },
+    "gradient_progress_card": {
+      "path": "components/gradient_progress_card.dart",
+      "version": "1.0.0",
+      "checksum": "332842787d7071e3a92525961a109e3206c617df1c094499e9eee4bfd64500ce",
+      "fileSize": 5694,
+      "lastModified": "2025-10-23T00:11:48.000"
+    },
+    "in_app_notification_card": {
+      "path": "components/in_app_notification_card.dart",
+      "version": "1.0.0",
+      "checksum": "9982eb0fb88a8b05b51aba358a770a0b564c4f30baaab5e325728095a8b0f24a",
+      "fileSize": 13877,
+      "lastModified": "2025-10-25T22:49:55.000"
+    },
+    "notification_badge": {
+      "path": "components/notification_badge.dart",
+      "version": "1.0.0",
+      "checksum": "0d241b71b73f55005ac4e402ccfbad24eebfc562a3eeb15f1fc2037a6877ea53",
+      "fileSize": 5015,
+      "lastModified": "2025-10-23T00:34:04.000"
+    },
+    "shimmer_loading_card": {
+      "path": "components/shimmer_loading_card.dart",
+      "version": "1.0.0",
+      "checksum": "192125b720d5d0ed0f0fa479178154815f6543cd0ab6aa061d0bdb85670de410",
+      "fileSize": 4195,
+      "lastModified": "2025-10-23T00:19:33.000"
+    },
+    "spinkit_loaders": {
+      "path": "components/spinkit_loaders.dart",
+      "version": "1.0.0",
+      "checksum": "6ebf003110d31c0a38f5f8e7fa7716e1fe8cffce9c9036302387ec6a6acb484a",
+      "fileSize": 8467,
+      "lastModified": "2025-10-23T00:34:03.000"
+    },
+    "theme_toggle_button": {
+      "path": "components/theme_toggle_button.dart",
+      "version": "1.0.0",
+      "checksum": "4e7971e1eb30364cc5bd92ce59ed8f5417b51126f759e8b43bd9823987a71e79",
+      "fileSize": 8678,
+      "lastModified": "2025-10-23T00:42:01.000"
+    }
+  },
+  "componentsDetailed": [
+    {
+      "name": "animated_action_sheet",
+      "path": "components/animated_action_sheet.dart",
+      "version": "1.0.0",
+      "checksum": "4c35c7a2fd92b854f610f89bd851ad9612485fef86b59f04be998e2210da92ac",
+      "fileSize": 15881,
+      "lastModified": "2025-10-25T22:49:55.000",
+      "description": "ActionSheetItem component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_bottom_nav_bar",
+      "path": "components/animated_bottom_nav_bar.dart",
+      "version": "1.0.0",
+      "checksum": "aa0694957883d124817515e4ffd28ce0f714bc822e2c5974c1d3a0349aeea016",
+      "fileSize": 6038,
+      "lastModified": "2025-10-23T00:34:03.000",
+      "description": "AnimatedBottomNavBar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_calendar",
+      "path": "components/animated_calendar.dart",
+      "version": "1.0.0",
+      "checksum": "98cd0fd9b9f68c348d672f75492e40eff2a1538536642b124d7e0f7c782f279b",
+      "fileSize": 11311,
+      "lastModified": "2025-10-24T18:34:27.000",
+      "description": "AnimatedCalendar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_card_component",
+      "path": "components/animated_card_component.dart",
+      "version": "1.0.0",
+      "checksum": "33b60f9a1654e50626609af5902f64babca6af67aaf69cf0f7f2ad016400616c",
+      "fileSize": 4795,
+      "lastModified": "2025-10-23T00:11:47.000",
+      "description": "AnimatedCardComponent component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_chat_box",
+      "path": "components/animated_chat_box.dart",
+      "version": "1.0.0",
+      "checksum": "4b9715eb3598e7e03e0a8e9960bec48e804b7b64c731545713d64a9a16c3f33c",
+      "fileSize": 17985,
+      "lastModified": "2025-10-24T18:34:27.000",
+      "description": "ChatMessage component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_download_bar",
+      "path": "components/animated_download_bar.dart",
+      "version": "1.0.0",
+      "checksum": "7401615fb9cf2843d61f6c0ebe2a2d0e01d5b2b0ab6e4c08199f845c8af6869f",
+      "fileSize": 16821,
+      "lastModified": "2025-10-24T18:34:27.000",
+      "description": "AnimatedDownloadBar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_music_bar",
+      "path": "components/animated_music_bar.dart",
+      "version": "1.0.0",
+      "checksum": "2800fd392fecb2fc2b4500ca964fa46b5b67e629bda94089be02504a642ae84b",
+      "fileSize": 14210,
+      "lastModified": "2025-10-24T18:34:27.000",
+      "description": "AnimatedMusicBar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_notification_bar",
+      "path": "components/animated_notification_bar.dart",
+      "version": "1.0.0",
+      "checksum": "dcf222dd4f2c1d45ca6a24a7f2e2f0b0b0eb1d94678e36c4c8ad3e0d39bf4af2",
+      "fileSize": 10019,
+      "lastModified": "2025-10-25T22:49:54.000",
+      "description": "AnimatedNotificationBar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_search_bar",
+      "path": "components/animated_search_bar.dart",
+      "version": "1.0.0",
+      "checksum": "c217eb344c90ec87dccf7c62bfad42fe04ee9fe8e08e0295c25c0f80805d183f",
+      "fileSize": 5860,
+      "lastModified": "2025-10-23T00:34:04.000",
+      "description": "AnimatedSearchBar component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_side_drawer",
+      "path": "components/animated_side_drawer.dart",
+      "version": "1.0.0",
+      "checksum": "6932afb811cd8f63f8d61150173ac0a6db92bf175a5a178c287c8993618e857e",
+      "fileSize": 9371,
+      "lastModified": "2025-10-23T00:34:03.000",
+      "description": "AnimatedSideDrawer component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "animated_toggle_switch",
+      "path": "components/animated_toggle_switch.dart",
+      "version": "1.0.0",
+      "checksum": "5ceb9ba8cbf9ab86568a5f931260b3f81d8b499c9e530f3b72b8890b413b2075",
+      "fileSize": 4484,
+      "lastModified": "2025-10-23T00:11:48.000",
+      "description": "AnimatedToggleSwitch component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "circular_progress_indicator",
+      "path": "components/circular_progress_indicator.dart",
+      "version": "1.0.0",
+      "checksum": "6284be0bdd9d3531c42de529c12ed0f6e4f418cfcfc534b8d7227377546e217f",
+      "fileSize": 5289,
+      "lastModified": "2025-10-23T00:34:04.000",
+      "description": "GradientCircularProgress component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "floating_action_menu",
+      "path": "components/floating_action_menu.dart",
+      "version": "1.0.0",
+      "checksum": "404d207a73bcdf8d52a03071b0241a46492237aec9b4a362ab0cf5822fcfa58c",
+      "fileSize": 5177,
+      "lastModified": "2025-10-23T00:11:48.000",
+      "description": "FloatingActionMenu component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "glassmorphic_button_component",
+      "path": "components/glassmorphic_button_component.dart",
+      "version": "1.0.0",
+      "checksum": "fc0ff92b3b2d627247173f07b00812082b58370fba90d000f5b2303db87af99c",
+      "fileSize": 4126,
+      "lastModified": "2025-10-23T00:36:03.000",
+      "description": "GlassmorphicButton component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "gradient_progress_card",
+      "path": "components/gradient_progress_card.dart",
+      "version": "1.0.0",
+      "checksum": "332842787d7071e3a92525961a109e3206c617df1c094499e9eee4bfd64500ce",
+      "fileSize": 5694,
+      "lastModified": "2025-10-23T00:11:48.000",
+      "description": "GradientProgressCard component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "in_app_notification_card",
+      "path": "components/in_app_notification_card.dart",
+      "version": "1.0.0",
+      "checksum": "9982eb0fb88a8b05b51aba358a770a0b564c4f30baaab5e325728095a8b0f24a",
+      "fileSize": 13877,
+      "lastModified": "2025-10-25T22:49:55.000",
+      "description": "NotificationItem component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "notification_badge",
+      "path": "components/notification_badge.dart",
+      "version": "1.0.0",
+      "checksum": "0d241b71b73f55005ac4e402ccfbad24eebfc562a3eeb15f1fc2037a6877ea53",
+      "fileSize": 5015,
+      "lastModified": "2025-10-23T00:34:04.000",
+      "description": "NotificationBadge component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "shimmer_loading_card",
+      "path": "components/shimmer_loading_card.dart",
+      "version": "1.0.0",
+      "checksum": "192125b720d5d0ed0f0fa479178154815f6543cd0ab6aa061d0bdb85670de410",
+      "fileSize": 4195,
+      "lastModified": "2025-10-23T00:19:33.000",
+      "description": "ShimmerLoadingCard component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "spinkit_loaders",
+      "path": "components/spinkit_loaders.dart",
+      "version": "1.0.0",
+      "checksum": "6ebf003110d31c0a38f5f8e7fa7716e1fe8cffce9c9036302387ec6a6acb484a",
+      "fileSize": 8467,
+      "lastModified": "2025-10-23T00:34:03.000",
+      "description": "SpinKitLoaders component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    },
+    {
+      "name": "theme_toggle_button",
+      "path": "components/theme_toggle_button.dart",
+      "version": "1.0.0",
+      "checksum": "4e7971e1eb30364cc5bd92ce59ed8f5417b51126f759e8b43bd9823987a71e79",
+      "fileSize": 8678,
+      "lastModified": "2025-10-23T00:42:01.000",
+      "description": "ThemeToggleButton component",
+      "dependencies": [
+        "package:flutter/material.dart"
+      ]
+    }
+  ]
+}

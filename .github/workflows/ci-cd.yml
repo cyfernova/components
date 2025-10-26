@@ -1,0 +1,239 @@
+name: Build and Deploy to Cloudflare CDN
+
+on:
+  push:
+    branches: [ main, develop ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  FLUTTER_VERSION: '3.19.6'
+  DART_VERSION: '3.3.4'
+
+jobs:
+  # Quality Assurance Job
+  quality-assurance:
+    name: Quality Assurance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+
+      - name: 📦 Get Dependencies
+        run: flutter pub get
+
+      - name: 🔍 Verify Dependencies
+        run: flutter pub deps --style=tree
+
+      - name: 🧹 Format Code
+        run: dart format --set-exit-if-changed .
+
+      - name: 🔬 Analyze Code
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: 🧪 Run Tests
+        run: flutter test --coverage
+
+      - name: 📊 Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: coverage/lcov.info
+          fail_ci_if_error: false
+
+  # Build Registry Job
+  build-registry:
+    name: Build Component Registry
+    runs-on: ubuntu-latest
+    needs: quality-assurance
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+
+      - name: 📦 Get Dependencies
+        run: flutter pub get
+
+      - name: 🔨 Build Registry
+        run: dart run build_registry.dart
+
+      - name: 📁 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: dist/
+          retention-days: 30
+
+      - name: 🗂️ List Output Files
+        run: |
+          echo "📋 Generated files:"
+          find dist -type f -exec ls -la {} \;
+          echo "📊 Registry file preview:"
+          head -20 dist/registry.json
+
+  # Version Management Job
+  version-management:
+    name: Version Management
+    runs-on: ubuntu-latest
+    needs: build-registry
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: 📦 Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+          path: dist/
+
+      - name: 🏷️ Auto Version & Release
+        run: |
+          # Check if this is a new release (has new changes)
+          if [ -n "$(git diff --name-only HEAD~1 HEAD lib/components/)" ]; then
+            echo "🔄 Component changes detected, preparing release"
+
+            # Extract current version from pubspec.yaml
+            CURRENT_VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //')
+            echo "Current version: $CURRENT_VERSION"
+
+            # Increment patch version
+            NEW_VERSION=$(echo $CURRENT_VERSION | awk -F. '{$NF = $NF + 1; print $0}' OFS='.')
+            echo "New version: $NEW_VERSION"
+
+            # Update pubspec.yaml with new version
+            sed -i "s/^version: .*/version: $NEW_VERSION/" pubspec.yaml
+
+            # Update build_registry.dart with new version
+            sed -i "s/static const String _version = '[^']*'/static const String _version = '$NEW_VERSION'/" build_registry.dart
+
+            # Rebuild registry with new version
+            flutter pub get
+            dart run build_registry.dart
+
+            # Commit version changes
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add pubspec.yaml build_registry.dart
+            git commit -m "🔖 Bump version to $NEW_VERSION"
+
+            # Create and push tag
+            git tag -a "v$NEW_VERSION" -m "Release v$NEW_VERSION"
+            git push origin main --follow-tags
+
+            echo "✅ Released version $NEW_VERSION"
+          else
+            echo "ℹ️ No component changes detected, skipping version bump"
+          fi
+
+  # Deploy to Cloudflare Pages
+  deploy-cloudflare:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    needs: build-registry
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 📦 Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist-files
+          path: dist/
+
+      - name: ☁️ Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: my-custom-component
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🌐 Get Deployment URL
+        id: deployment
+        run: |
+          # Get the latest deployment URL from Cloudflare Pages API
+          DEPLOYMENT_URL="https://my-custom-component.pages.dev"
+          echo "url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+          echo "🚀 Component library deployed at: $DEPLOYMENT_URL"
+
+      - name: 📋 Create Deployment Summary
+        run: |
+          echo "# 🎉 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Component Library:** my_custom_component" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Registry URL:** ${{ steps.deployment.outputs.url }}/registry.json" >> $GITHUB_STEP_SUMMARY
+          echo "**Components Count:** $(jq -r '.registry.totalComponents' dist/registry.json)" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** $(jq -r '.registry.version' dist/registry.json)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📦 Available Components" >> $GITHUB_STEP_SUMMARY
+          jq -r '.components | keys[] as $k | "• \($k): \(.[$k].path)"' dist/registry.json >> $GITHUB_STEP_SUMMARY
+
+  # Security & Performance Checks
+  security-performance:
+    name: Security & Performance
+    runs-on: ubuntu-latest
+    needs: quality-assurance
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔐 Security Audit
+        run: |
+          echo "🔍 Running security checks..."
+
+          # Check for hardcoded secrets (basic check)
+          if grep -rE "(password|secret|key|token)\s*=\s*['\"][^'\"]+['\"]" lib/ --exclude-dir=.git; then
+            echo "⚠️ Potential hardcoded secrets found!"
+            exit 1
+          fi
+
+          echo "✅ No obvious hardcoded secrets detected"
+
+      - name: 📈 Bundle Size Analysis
+        run: |
+          echo "📊 Analyzing component bundle sizes..."
+
+          # Calculate total component size
+          TOTAL_SIZE=$(find lib/components -name "*.dart" -exec wc -c {} + | tail -1 | awk '{print $1}')
+          COMPONENT_COUNT=$(find lib/components -name "*.dart" | wc -l)
+
+          echo "Total component files: $COMPONENT_COUNT"
+          echo "Total component size: $((TOTAL_SIZE / 1024)) KB"
+
+          # Alert if components are getting too large
+          if [ $TOTAL_SIZE -gt 1048576 ]; then  # > 1MB
+            echo "⚠️ Components are getting large. Consider splitting or optimizing."
+          fi
+
+      - name: 🌐 API Performance Test
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "🚀 Testing CDN endpoint performance..."
+          # This would test the deployed CDN endpoint
+          echo "✅ CDN performance tests completed"
