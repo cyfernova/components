@@ -237,7 +237,8 @@ class _AnimatedActionSheetState extends State<AnimatedActionSheet>
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
-                                      color: isDark ? Colors.white : Colors.black,
+                                      color:
+                                          isDark ? Colors.white : Colors.black,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
@@ -269,7 +270,7 @@ class _AnimatedActionSheetState extends State<AnimatedActionSheet>
                                   if (index >= _itemControllers.length) {
                                     return const SizedBox.shrink();
                                   }
-                                  
+
                                   return SlideTransition(
                                     position: _itemSlideAnimations[index],
                                     child: FadeTransition(
@@ -405,9 +406,7 @@ class _ActionSheetTileState extends State<_ActionSheetTile>
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             child: Container(
               decoration: BoxDecoration(
-                color: widget.isDark
-                    ? Colors.grey[850]
-                    : Colors.grey[100],
+                color: widget.isDark ? Colors.grey[850] : Colors.grey[100],
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Padding(
@@ -442,9 +441,8 @@ class _ActionSheetTileState extends State<_ActionSheetTile>
                     ),
                     Icon(
                       Icons.chevron_right,
-                      color: widget.isDark
-                          ? Colors.grey[600]
-                          : Colors.grey[400],
+                      color:
+                          widget.isDark ? Colors.grey[600] : Colors.grey[400],
                       size: 20,
                     ),
                   ],

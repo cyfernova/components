@@ -78,7 +78,6 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
               onTap: () => _showSnackbar(context, 'Animated Card Tapped!'),
             ),
             const SizedBox(height: 24),
-
             const Text(
               '2. Glassmorphic Buttons',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -105,7 +104,6 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
               ],
             ),
             const SizedBox(height: 24),
-
             const Text(
               '3. Gradient Progress Cards',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -127,7 +125,6 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
               gradientColors: const [Colors.blue, Colors.cyan],
             ),
             const SizedBox(height: 24),
-
             const Text(
               '4. Shimmer Loading Card',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -135,7 +132,6 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
             const SizedBox(height: 12),
             const ShimmerLoadingCard(height: 120),
             const SizedBox(height: 24),
-
             const Text(
               '5. Animated Toggle Switch',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -184,7 +180,6 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
               ),
             ),
             const SizedBox(height: 24),
-
             const Text(
               '6. Floating Action Menu',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

@@ -138,7 +138,7 @@ class _AnimatedNotificationBarState extends State<AnimatedNotificationBar>
 
   Color _getColor() {
     if (widget.customColor != null) return widget.customColor!;
-    
+
     switch (widget.type) {
       case NotificationType.success:
         return Colors.green;
@@ -153,7 +153,7 @@ class _AnimatedNotificationBarState extends State<AnimatedNotificationBar>
 
   IconData _getIcon() {
     if (widget.customIcon != null) return widget.customIcon!;
-    
+
     switch (widget.type) {
       case NotificationType.success:
         return Icons.check_circle;

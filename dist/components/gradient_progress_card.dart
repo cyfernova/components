@@ -34,10 +34,10 @@ class _GradientProgressCardState extends State<GradientProgressCard>
       vsync: this,
     );
 
-    _progressAnimation = Tween<double>(begin: 0.0, end: widget.progress)
-        .animate(
-          CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic),
-        );
+    _progressAnimation =
+        Tween<double>(begin: 0.0, end: widget.progress).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic),
+    );
 
     _controller.forward();
   }
@@ -46,13 +46,12 @@ class _GradientProgressCardState extends State<GradientProgressCard>
   void didUpdateWidget(GradientProgressCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.progress != widget.progress) {
-      _progressAnimation =
-          Tween<double>(
-            begin: oldWidget.progress,
-            end: widget.progress,
-          ).animate(
-            CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic),
-          );
+      _progressAnimation = Tween<double>(
+        begin: oldWidget.progress,
+        end: widget.progress,
+      ).animate(
+        CurvedAnimation(parent: _controller, curve: Curves.easeInOutCubic),
+      );
       _controller.forward(from: 0.0);
     }
   }

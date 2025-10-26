@@ -114,7 +114,8 @@ class RegistryBuilder {
     final dependencies = <String>{};
 
     // Extract import statements for material, cupertino, and custom packages
-    final importMatches = RegExp(r'''import\s+['"]([^'"]+)['"]''').allMatches(content);
+    final importMatches =
+        RegExp(r'''import\s+['"]([^'"]+)['"]''').allMatches(content);
 
     for (final match in importMatches) {
       final importPath = match.group(1);
@@ -122,8 +123,9 @@ class RegistryBuilder {
       // Only include external dependencies, not relative imports
       if (importPath != null &&
           (importPath.startsWith('package:flutter/') ||
-           importPath.startsWith('package:cupertino/') ||
-           (!importPath.startsWith('.') && importPath.contains('package:')))) {
+              importPath.startsWith('package:cupertino/') ||
+              (!importPath.startsWith('.') &&
+                  importPath.contains('package:')))) {
         dependencies.add(importPath);
       }
     }
@@ -203,7 +205,8 @@ class RegistryBuilder {
       final content = await registryFile.readAsString();
       final jsonData = jsonDecode(content) as Map<String, dynamic>;
 
-      if (!jsonData.containsKey('registry') || !jsonData.containsKey('components')) {
+      if (!jsonData.containsKey('registry') ||
+          !jsonData.containsKey('components')) {
         throw Exception('Invalid registry format: missing required sections');
       }
 
@@ -213,7 +216,6 @@ class RegistryBuilder {
       }
 
       print('✅ Registry validation passed with $componentCount components');
-
     } catch (e) {
       throw Exception('Registry validation failed: $e');
     }
@@ -261,7 +263,6 @@ class RegistryBuilder {
       print('   • Version: $_version');
       print('   • Registry: $_registryFile');
       print('   • Output: $_outputDir/');
-
     } catch (e) {
       print('❌ Build failed: $e');
       exit(1);

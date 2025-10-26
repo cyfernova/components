@@ -253,8 +253,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
                   label: 'Success',
                   color: Colors.green,
                   icon: Icons.check_circle,
-                  onPressed: () =>
-                      _showNotification(NotificationType.success),
+                  onPressed: () => _showNotification(NotificationType.success),
                 ),
                 _NotificationButton(
                   label: 'Error',
@@ -266,8 +265,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
                   label: 'Warning',
                   color: Colors.orange,
                   icon: Icons.warning,
-                  onPressed: () =>
-                      _showNotification(NotificationType.warning),
+                  onPressed: () => _showNotification(NotificationType.warning),
                 ),
                 _NotificationButton(
                   label: 'Info',
@@ -491,8 +489,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
                     text: '• All components support dark mode automatically',
                   ),
                   _TipItem(
-                    text:
-                        '• Use primaryColor prop to match your app\'s theme',
+                    text: '• Use primaryColor prop to match your app\'s theme',
                   ),
                 ],
               ),

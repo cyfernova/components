@@ -207,7 +207,8 @@ class _InAppNotificationCardState extends State<InAppNotificationCard>
                 color: isDark ? Colors.grey[800] : Colors.grey[200],
               ),
               itemBuilder: (context, index) {
-                if (index >= _controllers.length) return const SizedBox.shrink();
+                if (index >= _controllers.length)
+                  return const SizedBox.shrink();
 
                 final notification = widget.notifications[index];
                 return SlideTransition(
@@ -320,8 +321,8 @@ class _NotificationTileState extends State<_NotificationTile>
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) => Icon(
                             widget.notification.icon ?? Icons.notifications,
-                            color:
-                                widget.notification.color ?? widget.primaryColor,
+                            color: widget.notification.color ??
+                                widget.primaryColor,
                             size: 24,
                           ),
                         ),
@@ -349,7 +350,8 @@ class _NotificationTileState extends State<_NotificationTile>
                               fontWeight: widget.notification.isRead
                                   ? FontWeight.normal
                                   : FontWeight.bold,
-                              color: widget.isDark ? Colors.white : Colors.black,
+                              color:
+                                  widget.isDark ? Colors.white : Colors.black,
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -372,9 +374,8 @@ class _NotificationTileState extends State<_NotificationTile>
                       widget.notification.message,
                       style: TextStyle(
                         fontSize: 14,
-                        color: widget.isDark
-                            ? Colors.grey[400]
-                            : Colors.grey[600],
+                        color:
+                            widget.isDark ? Colors.grey[400] : Colors.grey[600],
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
