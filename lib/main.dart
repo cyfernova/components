@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Custom Components Showcase',
       theme: ThemeData(
@@ -38,7 +38,7 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
   bool toggleValue = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Beautiful Custom Components'),
@@ -223,7 +223,7 @@ class _ComponentShowcaseState extends State<ComponentShowcase> {
     );
   }
 
-  void _showSnackbar(BuildContext context, String message) {
+  void _showSnackbar(final BuildContext context, final String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),

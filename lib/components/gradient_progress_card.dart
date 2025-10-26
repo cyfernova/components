@@ -43,7 +43,7 @@ class _GradientProgressCardState extends State<GradientProgressCard>
   }
 
   @override
-  void didUpdateWidget(GradientProgressCard oldWidget) {
+  void didUpdateWidget(final GradientProgressCard oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.progress != widget.progress) {
       _progressAnimation = Tween<double>(
@@ -63,7 +63,7 @@ class _GradientProgressCardState extends State<GradientProgressCard>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(

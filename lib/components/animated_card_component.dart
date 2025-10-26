@@ -58,7 +58,7 @@ class _AnimatedCardComponentState extends State<AnimatedCardComponent>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return GestureDetector(
       onTapDown: (_) => setState(() => _isPressed = true),
       onTapUp: (_) {

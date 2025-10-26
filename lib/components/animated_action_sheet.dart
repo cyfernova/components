@@ -40,10 +40,10 @@ class AnimatedActionSheet extends StatefulWidget {
 
   /// Show action sheet as bottom modal
   static Future<T?> show<T>(
-    BuildContext context, {
+    final BuildContext context, {
     String? title,
     String? subtitle,
-    required List<ActionSheetItem> actions,
+    required final List<ActionSheetItem> actions,
     bool showCancelButton = true,
     String cancelText = 'Cancel',
     Color? primaryColor,
@@ -173,7 +173,7 @@ class _AnimatedActionSheetState extends State<AnimatedActionSheet>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
 
@@ -388,7 +388,7 @@ class _ActionSheetTileState extends State<_ActionSheetTile>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final color = widget.action.isDestructive
         ? Colors.red
         : (widget.action.color ?? widget.primaryColor);

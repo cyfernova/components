@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 /// Modern animated music player bar with controls
 class AnimatedMusicBar extends StatefulWidget {
@@ -94,7 +95,7 @@ class _AnimatedMusicBarState extends State<AnimatedMusicBar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
     final accentColor = widget.accentColor ?? Colors.purple;
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -338,7 +339,7 @@ class _AnimatedMusicBarState extends State<AnimatedMusicBar>
   }
 
   String _formatDuration(Duration duration) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    String twoDigits(final int n) => n.toString().padLeft(2, '0');
     String minutes = twoDigits(duration.inMinutes.remainder(60));
     String seconds = twoDigits(duration.inSeconds.remainder(60));
     return '$minutes:$seconds';
@@ -359,7 +360,7 @@ class _ControlButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(50),
@@ -392,7 +393,7 @@ class _WaveVisualizerPainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final paint = Paint()
       ..color = color.withOpacity(0.6)
       ..strokeWidth = 3

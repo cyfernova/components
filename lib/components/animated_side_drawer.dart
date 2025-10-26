@@ -95,7 +95,7 @@ class _AnimatedSideDrawerState extends State<AnimatedSideDrawer>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Drawer(
       child: Container(
         color: widget.backgroundColor,
@@ -177,7 +177,7 @@ class _AnimatedSideDrawerState extends State<AnimatedSideDrawer>
     );
   }
 
-  Widget _buildDrawerItem(int index) {
+  Widget _buildDrawerItem(final int index) {
     final item = widget.items[index];
     final isSelected = index == widget.selectedIndex;
 

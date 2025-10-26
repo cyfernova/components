@@ -101,7 +101,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {

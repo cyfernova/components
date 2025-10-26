@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Custom Components Set 4',
       debugShowCheckedModeBanner: false,
@@ -82,7 +82,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
     ),
   ];
 
-  void _showNotification(NotificationType type) {
+  void _showNotification(final NotificationType type) {
     String message = '';
     String title = '';
 
@@ -113,7 +113,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
       position: NotificationPosition.top,
       duration: const Duration(seconds: 3),
       onTap: () {
-        print('Notification tapped!');
+        debugPrint('Notification tapped!');
       },
     );
   }
@@ -131,7 +131,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           color: Colors.blue,
           onTap: () {
             _showNotification(NotificationType.success);
-            print('Share tapped');
+            debugPrint('Share tapped');
           },
         ),
         ActionSheetItem(
@@ -140,7 +140,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           color: Colors.orange,
           onTap: () {
             _showNotification(NotificationType.info);
-            print('Edit tapped');
+            debugPrint('Edit tapped');
           },
         ),
         ActionSheetItem(
@@ -149,7 +149,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           color: Colors.green,
           onTap: () {
             _showNotification(NotificationType.success);
-            print('Download tapped');
+            debugPrint('Download tapped');
           },
         ),
         ActionSheetItem(
@@ -158,7 +158,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           color: Colors.purple,
           onTap: () {
             _showNotification(NotificationType.info);
-            print('Copy link tapped');
+            debugPrint('Copy link tapped');
           },
         ),
         ActionSheetItem(
@@ -167,7 +167,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           color: Colors.orange,
           onTap: () {
             _showNotification(NotificationType.warning);
-            print('Report tapped');
+            debugPrint('Report tapped');
           },
         ),
         ActionSheetItem(
@@ -176,7 +176,7 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           isDestructive: true,
           onTap: () {
             _showNotification(NotificationType.error);
-            print('Delete tapped');
+            debugPrint('Delete tapped');
           },
         ),
       ],
@@ -193,26 +193,26 @@ class _ComponentsSet4DemoState extends State<ComponentsSet4Demo> {
           title: 'View Profile',
           icon: Icons.person,
           color: Colors.blue,
-          onTap: () => print('View profile'),
+          onTap: () => debugPrint('View profile'),
         ),
         ActionSheetItem(
           title: 'Settings',
           icon: Icons.settings,
           color: Colors.grey,
-          onTap: () => print('Settings'),
+          onTap: () => debugPrint('Settings'),
         ),
         ActionSheetItem(
           title: 'Logout',
           icon: Icons.logout,
           isDestructive: true,
-          onTap: () => print('Logout'),
+          onTap: () => debugPrint('Logout'),
         ),
       ],
     );
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
@@ -509,7 +509,7 @@ class _SectionTitle extends StatelessWidget {
   const _SectionTitle({required this.title});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
       title,
@@ -536,7 +536,7 @@ class _NotificationButton extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return ElevatedButton.icon(
       onPressed: onPressed,
       icon: Icon(icon, size: 20),
@@ -565,7 +565,7 @@ class _FeatureItem extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
@@ -620,7 +620,7 @@ class _TipItem extends StatelessWidget {
   const _TipItem({required this.text});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),

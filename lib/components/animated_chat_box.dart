@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 /// Model for chat messages
 class ChatMessage {
@@ -89,7 +90,7 @@ class _AnimatedChatBoxState extends State<AnimatedChatBox>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final myMessageColor =
         widget.myMessageColor ?? Theme.of(context).primaryColor;
@@ -400,7 +401,7 @@ class _MessageBubbleState extends State<_MessageBubble>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SlideTransition(
       position: _slideAnimation,
       child: FadeTransition(
@@ -504,7 +505,7 @@ class _TypingDot extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return AnimatedBuilder(
       animation: animation,

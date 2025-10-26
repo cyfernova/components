@@ -65,7 +65,7 @@ class _NotificationBadgeState extends State<NotificationBadge>
   }
 
   @override
-  void didUpdateWidget(NotificationBadge oldWidget) {
+  void didUpdateWidget(final NotificationBadge oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.showPulse && widget.showBadge && widget.count > 0) {
       if (!_controller.isAnimating) {
@@ -83,7 +83,7 @@ class _NotificationBadgeState extends State<NotificationBadge>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       children: [

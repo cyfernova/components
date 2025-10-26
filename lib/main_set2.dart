@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Beautiful Components Set 2',
       debugShowCheckedModeBanner: false,
@@ -58,7 +58,7 @@ class _ComponentShowcaseScreenState extends State<ComponentShowcaseScreen> {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -290,7 +290,7 @@ class _ComponentShowcaseScreenState extends State<ComponentShowcaseScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildSectionTitle(final String title) {
     return Text(
       title,
       style: const TextStyle(
@@ -354,7 +354,7 @@ class _ComponentShowcaseScreenState extends State<ComponentShowcaseScreen> {
     );
   }
 
-  Widget _buildFeatureItem(String text) {
+  Widget _buildFeatureItem(final String text) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Text(

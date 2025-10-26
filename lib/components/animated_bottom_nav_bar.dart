@@ -46,7 +46,7 @@ class _AnimatedBottomNavBarState extends State<AnimatedBottomNavBar>
   }
 
   @override
-  void didUpdateWidget(AnimatedBottomNavBar oldWidget) {
+  void didUpdateWidget(final AnimatedBottomNavBar oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.currentIndex != widget.currentIndex) {
       _previousIndex = oldWidget.currentIndex;
@@ -61,7 +61,7 @@ class _AnimatedBottomNavBarState extends State<AnimatedBottomNavBar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Container(
       height: widget.height,
       decoration: BoxDecoration(
@@ -114,7 +114,7 @@ class _AnimatedBottomNavBarState extends State<AnimatedBottomNavBar>
     );
   }
 
-  Widget _buildNavItem(int index) {
+  Widget _buildNavItem(final int index) {
     final item = widget.items[index];
     final isSelected = index == widget.currentIndex;
 

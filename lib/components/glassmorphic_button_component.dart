@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 /// A modern glassmorphic button with blur effect and animations
@@ -53,11 +54,11 @@ class _GlassmorphicButtonState extends State<GlassmorphicButton>
     super.dispose();
   }
 
-  void _handleTapDown(TapDownDetails details) {
+  void _handleTapDown(final TapDownDetails details) {
     _controller.forward();
   }
 
-  void _handleTapUp(TapUpDetails details) {
+  void _handleTapUp(final TapUpDetails details) {
     _controller.reverse();
     widget.onPressed?.call();
   }
@@ -67,7 +68,7 @@ class _GlassmorphicButtonState extends State<GlassmorphicButton>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return GestureDetector(
       onTapDown: _handleTapDown,
       onTapUp: _handleTapUp,

@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Custom Components Set 3',
       debugShowCheckedModeBanner: false,
@@ -68,7 +68,7 @@ class _ComponentsSet3DemoState extends State<ComponentsSet3Demo> {
   double _downloadProgress = 0.65;
   DownloadState _downloadState = DownloadState.downloading;
 
-  void _handleSendMessage(String message) {
+  void _handleSendMessage(final String message) {
     setState(() {
       _messages.add(
         ChatMessage(
@@ -133,7 +133,7 @@ class _ComponentsSet3DemoState extends State<ComponentsSet3Demo> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
@@ -352,7 +352,7 @@ class _SectionTitle extends StatelessWidget {
   const _SectionTitle({required this.title});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
       title,
@@ -377,7 +377,7 @@ class _FeatureItem extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),

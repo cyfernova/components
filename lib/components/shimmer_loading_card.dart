@@ -42,7 +42,7 @@ class _ShimmerLoadingCardState extends State<ShimmerLoadingCard>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Container(
       width: widget.width,
       height: widget.height,

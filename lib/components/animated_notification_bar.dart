@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 
 /// Type of notification
 enum NotificationType {
@@ -44,8 +45,8 @@ class AnimatedNotificationBar extends StatefulWidget {
 
   /// Show notification as overlay
   static void show(
-    BuildContext context, {
-    required String message,
+    final BuildContext context, {
+    required final String message,
     String? title,
     NotificationType type = NotificationType.info,
     NotificationPosition position = NotificationPosition.top,
@@ -167,7 +168,7 @@ class _AnimatedNotificationBarState extends State<AnimatedNotificationBar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final color = _getColor();
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
@@ -316,7 +317,7 @@ class _NotificationOverlay extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Positioned(
       top: position == NotificationPosition.top ? 0 : null,
       bottom: position == NotificationPosition.bottom ? 0 : null,

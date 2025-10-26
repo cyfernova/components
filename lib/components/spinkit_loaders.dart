@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 /// SpinKit-style loading indicators with beautiful animations
 class SpinKitLoaders {
@@ -70,7 +71,7 @@ class _RotatingCircleLoaderState extends State<_RotatingCircleLoader>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: widget.size,
       height: widget.size,
@@ -97,7 +98,7 @@ class _CirclePainter extends CustomPainter {
   _CirclePainter({required this.color});
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final paint = Paint()
       ..color = color
       ..strokeWidth = 4
@@ -151,7 +152,7 @@ class _PulsingDotsLoaderState extends State<_PulsingDotsLoader>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: widget.size,
       height: widget.size,
@@ -219,7 +220,7 @@ class _WaveLoaderState extends State<_WaveLoader>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: widget.size,
       height: widget.size,
@@ -289,7 +290,7 @@ class _RotatingSquareLoaderState extends State<_RotatingSquareLoader>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: widget.size,
       height: widget.size,

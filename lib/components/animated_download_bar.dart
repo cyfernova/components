@@ -91,7 +91,7 @@ class _AnimatedDownloadBarState extends State<AnimatedDownloadBar>
   }
 
   @override
-  void didUpdateWidget(AnimatedDownloadBar oldWidget) {
+  void didUpdateWidget(final AnimatedDownloadBar oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.progress != widget.progress) {
       _progressAnimation = Tween<double>(
@@ -132,7 +132,7 @@ class _AnimatedDownloadBarState extends State<AnimatedDownloadBar>
     }
   }
 
-  Color _getStateColor(bool isDark) {
+  Color _getStateColor(final bool isDark) {
     switch (widget.state) {
       case DownloadState.downloading:
         return widget.primaryColor ?? Theme.of(context).primaryColor;
@@ -162,7 +162,7 @@ class _AnimatedDownloadBarState extends State<AnimatedDownloadBar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
     final accentColor = widget.accentColor ?? Colors.blue;
@@ -436,7 +436,7 @@ class _DownloadProgressPainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final progressWidth = size.width * progress;
 
     // Draw gradient progress

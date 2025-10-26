@@ -50,7 +50,7 @@ class _AnimatedToggleSwitchState extends State<AnimatedToggleSwitch>
   }
 
   @override
-  void didUpdateWidget(AnimatedToggleSwitch oldWidget) {
+  void didUpdateWidget(final AnimatedToggleSwitch oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.value != widget.value) {
       if (widget.value) {
@@ -79,7 +79,7 @@ class _AnimatedToggleSwitchState extends State<AnimatedToggleSwitch>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return GestureDetector(
       onTap: () {
         widget.onChanged(!widget.value);

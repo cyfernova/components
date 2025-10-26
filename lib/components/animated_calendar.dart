@@ -68,7 +68,7 @@ class _AnimatedCalendarState extends State<AnimatedCalendar>
     super.dispose();
   }
 
-  void _changeMonth(bool forward) {
+  void _changeMonth(final bool forward) {
     setState(() {
       _slideAnimation = Tween<Offset>(
         begin: Offset.zero,
@@ -98,7 +98,7 @@ class _AnimatedCalendarState extends State<AnimatedCalendar>
     });
   }
 
-  void _selectDate(DateTime date) {
+  void _selectDate(final DateTime date) {
     setState(() {
       _selectedDate = date;
     });
@@ -138,7 +138,7 @@ class _AnimatedCalendarState extends State<AnimatedCalendar>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
     final accentColor = widget.accentColor ?? Colors.amber;
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -314,7 +314,7 @@ class _AnimatedCalendarState extends State<AnimatedCalendar>
     );
   }
 
-  String _getMonthName(int month) {
+  String _getMonthName(final int month) {
     const months = [
       'January',
       'February',

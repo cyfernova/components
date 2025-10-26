@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 /// A beautiful circular progress indicator with gradient and animations
 class GradientCircularProgress extends StatefulWidget {
@@ -52,7 +53,7 @@ class _GradientCircularProgressState extends State<GradientCircularProgress>
   }
 
   @override
-  void didUpdateWidget(GradientCircularProgress oldWidget) {
+  void didUpdateWidget(final GradientCircularProgress oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.progress != widget.progress) {
       _animation = Tween<double>(
@@ -73,7 +74,7 @@ class _GradientCircularProgressState extends State<GradientCircularProgress>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: widget.size,
       height: widget.size,
@@ -149,7 +150,7 @@ class _CircleProgressPainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = (size.width - strokeWidth) / 2;
     final rect = Rect.fromCircle(center: center, radius: radius);

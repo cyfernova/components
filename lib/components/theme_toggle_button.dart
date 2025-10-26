@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 /// A beautiful animated theme toggle button that switches between light and dark mode
 class ThemeToggleButton extends StatefulWidget {
@@ -74,7 +75,7 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton>
   }
 
   @override
-  void didUpdateWidget(ThemeToggleButton oldWidget) {
+  void didUpdateWidget(final ThemeToggleButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.isDarkMode != widget.isDarkMode) {
       if (widget.isDarkMode) {
@@ -97,7 +98,7 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return GestureDetector(
       onTap: _handleTap,
       child: AnimatedBuilder(
@@ -193,7 +194,7 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton>
     ];
   }
 
-  Widget _buildStar(double size, double opacity) {
+  Widget _buildStar(final double size, final double opacity) {
     return Container(
       width: size,
       height: size,
@@ -222,7 +223,7 @@ class _SunRaysPainter extends CustomPainter {
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final paint = Paint()
       ..color = Colors.white.withOpacity(opacity.clamp(0.0, 1.0))
@@ -258,7 +259,7 @@ class _SunMoonPainter extends CustomPainter {
   _SunMoonPainter({required this.progress});
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = size.width / 2;
 

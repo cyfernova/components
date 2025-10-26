@@ -19,7 +19,7 @@ class _ThemeToggleAppState extends State<ThemeToggleApp> {
   bool _isDarkMode = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return MaterialApp(
       title: 'Theme Toggle Demo',
       debugShowCheckedModeBanner: false,
@@ -74,7 +74,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
   ];
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final colorScheme = Theme.of(context).colorScheme;
 
@@ -157,7 +157,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
     );
   }
 
-  Widget _buildHeroSection(bool isDark, ColorScheme colorScheme) {
+  Widget _buildHeroSection(final bool isDark, ColorScheme colorScheme) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(32),
@@ -217,7 +217,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title, ColorScheme colorScheme) {
+  Widget _buildSectionTitle(final String title, ColorScheme colorScheme) {
     return Text(
       title,
       style: TextStyle(
@@ -228,7 +228,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
     );
   }
 
-  Widget _buildFeatureCards(bool isDark, ColorScheme colorScheme) {
+  Widget _buildFeatureCards(final bool isDark, ColorScheme colorScheme) {
     final features = [
       {
         'icon': Icons.animation,
@@ -317,7 +317,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
     );
   }
 
-  Widget _buildInteractiveDemo(bool isDark, ColorScheme colorScheme) {
+  Widget _buildInteractiveDemo(final bool isDark, ColorScheme colorScheme) {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
@@ -405,7 +405,7 @@ class _ThemeToggleDemoScreenState extends State<ThemeToggleDemoScreen> {
     );
   }
 
-  Widget _buildThemePreviewCards(bool isDark, ColorScheme colorScheme) {
+  Widget _buildThemePreviewCards(final bool isDark, ColorScheme colorScheme) {
     return Column(
       children: [
         AnimatedCardComponent(

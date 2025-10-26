@@ -118,14 +118,14 @@ class _InAppNotificationCardState extends State<InAppNotificationCard>
     }
   }
 
-  void _dismissNotification(int index) {
+  void _dismissNotification(final int index) {
     _controllers[index].reverse().then((_) {
       widget.onNotificationDismiss?.call(index);
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
 
@@ -288,7 +288,7 @@ class _NotificationTileState extends State<_NotificationTile>
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final content = InkWell(
       onTap: widget.onTap,
       onTapDown: (_) => _scaleController.forward(),
